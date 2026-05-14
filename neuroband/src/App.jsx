@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Activity,
@@ -392,10 +392,7 @@ export default function App() {
             attention.
           </p>
 
-          <form className="form">
-            <input type="email" placeholder="Enter your email" />
-            <button type="button">Join Waitlist</button>
-          </form>
+          <KitWaitlistForm />
         </div>
       </section>
     </main>
@@ -443,4 +440,22 @@ function NeuroBandMark({ small = false }) {
       <span className="arc arc4" />
     </div>
   );
+}
+function KitWaitlistForm() {
+  useEffect(() => {
+    const existingScript = document.querySelector(
+      'script[data-uid="b2784fa021"]'
+    );
+
+    if (existingScript) return;
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.setAttribute("data-uid", "b2784fa021");
+    script.src = "https://neuroband.kit.com/b2784fa021/index.js";
+
+    document.getElementById("kit-waitlist-form").appendChild(script);
+  }, []);
+
+  return <div id="kit-waitlist-form" className="kitFormWrap" />;
 }
