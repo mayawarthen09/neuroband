@@ -2,12 +2,25 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   Activity,
+  Award,
+  BatteryCharging,
+  BookOpen,
+  Brain,
   ChevronRight,
   CircleDot,
-  Headphones,
+  Coffee,
+  GraduationCap,
+  HeartPulse,
+  LineChart,
+  Mail,
+  Moon,
+  Phone,
   Radio,
-  Smartphone,
-  TrendingUp,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  Trophy,
+  Vibrate,
   Watch,
   Waves
 } from "lucide-react";
@@ -15,356 +28,419 @@ import {
 export default function App() {
   const features = [
     {
-      icon: <Waves className="h-6 w-6" />,
-      title: "Brainwave awareness",
-      text: "See focus, calm, and cognitive load signals translated into simple daily guidance."
+      icon: <Vibrate size={26} />,
+      title: "Personalized haptic cues",
+      text: "NeuroBand uses gentle wrist vibrations as refocus cues, then helps users discover which timing patterns work best for them."
     },
     {
-      icon: <CircleDot className="h-6 w-6" />,
-      title: "Focus tracking",
-      text: "Measure your best mental windows and learn when to work, pause, or recover."
+      icon: <Brain size={26} />,
+      title: "Mini SART focus testing",
+      text: "Users complete short sustained-attention tasks to measure reaction time variability and attention patterns over time."
     },
     {
-      icon: <Radio className="h-6 w-6" />,
-      title: "Connected feedback",
-      text: "A subtle wearable experience that keeps your mind, body, and habits in sync."
+      icon: <LineChart size={26} />,
+      title: "Daily focus logging",
+      text: "Students, users, or teachers can quickly log focus observations so progress becomes visible instead of invisible."
     },
     {
-      icon: <TrendingUp className="h-6 w-6" />,
-      title: "Elevation over time",
-      text: "Build better routines with trend reports that show progress across focus and recovery."
+      icon: <Coffee size={26} />,
+      title: "Context tracking",
+      text: "Sleep, caffeine, effort, and other daily factors can be logged alongside attention results to reveal useful patterns."
+    },
+    {
+      icon: <Trophy size={26} />,
+      title: "Rewards system",
+      text: "Users can set personal benchmarks and attach meaningful rewards, turning focus goals into motivation they actually care about."
+    },
+    {
+      icon: <ShieldCheck size={26} />,
+      title: "Student-centered design",
+      text: "Built to be subtle, low-cost, classroom-friendly, and supportive for people who may not always have access to medication or accommodations."
     }
   ];
 
-  const stats = [
-    ["Focus", "96%"],
-    ["Session", "45:00"],
-    ["Calm", "High"],
-    ["Load", "Low"]
+  const researchStats = [
+    ["Participants", "30–35", "11th and 12th grade students"],
+    ["Sessions", "2", "Control and vibration conditions"],
+    ["Task length", "30 min", "Sustained Attention to Response Task"],
+    ["Cue pattern", "600 ms", "Gentle biphasic vibration cue"]
   ];
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#0A0F26] text-white">
-      <section className="relative border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,224,255,0.18),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(37,99,255,0.24),transparent_32%),linear-gradient(180deg,rgba(10,15,38,0.2),#0A0F26_82%)]" />
-        <div className="absolute left-1/2 top-28 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-[#2563FF]/10 blur-3xl" />
+    <main className="site">
+      <section className="hero" id="top">
+        <div className="glow glowOne" />
+        <div className="glow glowTwo" />
 
-        <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-7">
-          <a href="#top" className="flex items-center gap-4">
-            <NeuroBandMark size="small" />
+        <nav className="nav">
+          <a className="brand" href="#top">
+            <NeuroBandMark small />
             <div>
-              <p className="font-mono text-xl font-semibold uppercase tracking-[0.36em] text-white">
-                NeuroBand
-              </p>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.38em] text-[#00E0FF]">
-                Tune your mind
-              </p>
+              <div className="brandName">NeuroBand</div>
+              <div className="brandTag">Tune your mind</div>
             </div>
           </a>
 
-          <div className="hidden items-center gap-9 font-mono text-xs uppercase tracking-[0.24em] text-[#A5B4C7] md:flex">
-            <a href="#features" className="hover:text-[#00E0FF]">
-              Features
-            </a>
-            <a href="#app" className="hover:text-[#00E0FF]">
-              App
-            </a>
-            <a href="#waitlist" className="hover:text-[#00E0FF]">
-              Waitlist
-            </a>
+          <div className="navLinks">
+            <a href="#features">Features</a>
+            <a href="#creator">Creator</a>
+            <a href="#research">Research</a>
+            <a href="#contact">Contact</a>
           </div>
 
-          <a
-            href="#waitlist"
-            className="rounded-full border border-[#00E0FF]/40 bg-[#00E0FF]/10 px-5 py-3 font-mono text-xs uppercase tracking-[0.2em] text-[#00E0FF] hover:bg-[#00E0FF]/20"
-          >
-            Early access
-          </a>
+          <a className="navButton" href="#contact">Contact</a>
         </nav>
 
-        <div
-          id="top"
-          className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-6 pb-24 pt-12 md:grid-cols-[1.05fr_0.95fr] md:pb-32 md:pt-20"
-        >
+        <div className="heroGrid">
           <motion.div
-            initial={{ opacity: 0, y: 22 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-[#00E0FF]/25 bg-[#00E0FF]/8 px-4 py-2 font-mono text-xs uppercase tracking-[0.2em] text-[#00E0FF] shadow-[0_0_28px_rgba(0,224,255,0.18)]">
-              <span className="h-2 w-2 rounded-full bg-[#00E0FF] shadow-[0_0_16px_#00E0FF]" />
-              Brainwaves • Focus • Wearable
+            <div className="eyebrow">
+              <span />
+              Haptic cues • Focus tracking • ADHD support
             </div>
 
-            <h1 className="max-w-4xl font-mono text-5xl font-semibold uppercase leading-[0.95] tracking-[0.18em] text-white md:text-7xl">
-              Tune your mind. Elevate your life.
-            </h1>
+            <h1>Tune your mind. Elevate your life.</h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#A5B4C7]">
-              NeuroBand is a sleek neurotech wearable designed to help you
-              understand focus, stress, and recovery through real-time
-              brainwave-inspired insights.
+            <p className="heroText">
+              NeuroBand is a student-built wearable and companion app designed
+              to help people understand their attention patterns, receive gentle
+              refocus cues, and build focus habits that are personalized to real
+              life.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#waitlist"
-                className="inline-flex items-center justify-center rounded-full bg-[#00E0FF] px-8 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#0A0F26] shadow-[0_0_32px_rgba(0,224,255,0.28)] hover:bg-white"
-              >
-                Join waitlist <ChevronRight className="ml-2 h-4 w-4" />
+            <div className="heroButtons">
+              <a className="primaryButton" href="#research">
+                View the research <ChevronRight size={18} />
               </a>
-
-              <a
-                href="#features"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 font-mono text-xs uppercase tracking-[0.22em] text-white hover:bg-white/10"
-              >
-                Explore tech
+              <a className="secondaryButton" href="#features">
+                Explore features
               </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            className="dashboardWrap"
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.12 }}
-            className="relative"
+            transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className="absolute inset-0 rounded-[3rem] bg-[#00E0FF]/12 blur-3xl" />
-
-            <div className="relative rounded-[2.5rem] border border-white/10 bg-white/[0.035] p-7 shadow-2xl backdrop-blur">
-              <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-5">
-                <div className="flex items-center gap-3">
-                  <NeuroBandMark size="small" />
-                  <span className="font-mono text-xs uppercase tracking-[0.28em] text-[#A5B4C7]">
-                    Live session
-                  </span>
+            <div className="dashboard">
+              <div className="dashboardTop">
+                <div className="miniBrand">
+                  <NeuroBandMark small />
+                  <span>Personal Focus Session</span>
                 </div>
-                <span className="rounded-full border border-[#00E0FF]/30 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[#00E0FF]">
-                  Active
-                </span>
+                <span className="activePill">Active</span>
               </div>
 
-              <div className="flex justify-center py-8">
-                <NeuroBandMark size="hero" />
+              <div className="markArea">
+                <NeuroBandMark />
               </div>
 
-              <div className="rounded-[2rem] border border-white/10 bg-[#071126] p-6">
-                <div className="mb-5 flex items-end justify-between">
+              <div className="focusCard">
+                <div className="focusTop">
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#A5B4C7]">
-                      Focus
-                    </p>
-                    <p className="mt-2 text-5xl font-semibold text-white">
-                      96%
-                    </p>
-                    <p className="mt-1 text-sm text-[#00E0FF]">Excellent</p>
+                    <p>Focus stability</p>
+                    <strong>96%</strong>
+                    <span>Refocus cue delivered</span>
                   </div>
-                  <Activity className="h-10 w-10 text-[#00E0FF]" />
+                  <Activity size={42} />
                 </div>
 
-                <div className="h-20 overflow-hidden rounded-2xl border border-[#00E0FF]/20 bg-[#00E0FF]/5 p-3">
-                  <svg viewBox="0 0 420 88" className="h-full w-full" fill="none">
-                    <path
-                      d="M0 50 C 22 28, 44 28, 66 50 S 110 72, 132 50 S 176 28, 198 50 S 242 72, 264 50 S 308 28, 330 50 S 374 72, 420 42"
-                      stroke="#00E0FF"
-                      strokeWidth="5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M0 50 C 22 28, 44 28, 66 50 S 110 72, 132 50 S 176 28, 198 50 S 242 72, 264 50 S 308 28, 330 50 S 374 72, 420 42"
-                      stroke="#2563FF"
-                      strokeWidth="12"
-                      strokeLinecap="round"
-                      opacity="0.18"
-                    />
-                  </svg>
-                </div>
+                <svg viewBox="0 0 420 88" className="waveLine" fill="none">
+                  <path
+                    d="M0 50 C 22 28, 44 28, 66 50 S 110 72, 132 50 S 176 28, 198 50 S 242 72, 264 50 S 308 28, 330 50 S 374 72, 420 42"
+                    stroke="#00E0FF"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M0 50 C 22 28, 44 28, 66 50 S 110 72, 132 50 S 176 28, 198 50 S 242 72, 264 50 S 308 28, 330 50 S 374 72, 420 42"
+                    stroke="#2563FF"
+                    strokeWidth="12"
+                    strokeLinecap="round"
+                    opacity="0.18"
+                  />
+                </svg>
               </div>
 
-              <div className="mt-5 grid grid-cols-2 gap-4">
-                {stats.map(([label, value]) => (
-                  <div
-                    key={label}
-                    className="rounded-3xl border border-white/10 bg-white/[0.04] p-4"
-                  >
-                    <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-[#A5B4C7]">
-                      {label}
-                    </p>
-                    <p className="mt-2 text-xl font-semibold text-white">
-                      {value}
-                    </p>
-                  </div>
-                ))}
+              <div className="statGrid">
+                <Stat label="Sleep" value="7.5 hr" />
+                <Stat label="Caffeine" value="Yes" />
+                <Stat label="Cue timing" value="Jittered" />
+                <Stat label="Reward" value="Starbucks" />
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-10">
-        <div className="grid gap-4 border-b border-white/10 pb-10 md:grid-cols-6">
-          {[
-            [<Activity className="h-5 w-5" />, "Brainwaves"],
-            [<CircleDot className="h-5 w-5" />, "Focus"],
-            [<Radio className="h-5 w-5" />, "Connection"],
-            [<Headphones className="h-5 w-5" />, "Neurotech"],
-            [<Watch className="h-5 w-5" />, "Wearable"],
-            [<TrendingUp className="h-5 w-5" />, "Elevation"]
-          ].map(([icon, label]) => (
-            <div
-              key={label}
-              className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.025] px-4 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#00E0FF]"
-            >
-              {icon}
-              {label}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="features" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="mb-12 max-w-2xl">
-          <p className="font-mono text-sm uppercase tracking-[0.32em] text-[#00E0FF]">
-            Core system
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            Designed around clarity, connection, and control.
-          </h2>
-          <p className="mt-5 leading-8 text-[#A5B4C7]">
-            The visual identity is clean, futuristic, and premium: deep navy
-            surfaces, electric cyan accents, and signal-inspired motion
-            throughout.
-          </p>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-4">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="group rounded-3xl border border-white/10 bg-white/[0.035] text-white shadow-xl transition hover:border-[#00E0FF]/40 hover:bg-[#00E0FF]/5"
-            >
-              <div className="p-6">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#00E0FF]/20 bg-[#00E0FF]/10 text-[#00E0FF] shadow-[0_0_24px_rgba(0,224,255,0.12)]">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-semibold">{feature.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#A5B4C7]">
-                  {feature.text}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section
-        id="app"
-        className="mx-auto grid max-w-7xl gap-8 px-6 py-20 md:grid-cols-[0.9fr_1.1fr]"
-      >
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 shadow-xl">
-          <Smartphone className="h-10 w-10 text-[#00E0FF]" />
-          <p className="mt-8 font-mono text-sm uppercase tracking-[0.32em] text-[#00E0FF]">
-            Companion app
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight">
-            Your focus dashboard, simplified.
-          </h2>
-          <p className="mt-5 leading-8 text-[#A5B4C7]">
-            NeuroBand turns complex signals into clean visuals, readiness
-            scores, and micro-prompts that help users tune their day.
-          </p>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          {[
-            [
-              "Morning readiness",
-              "Start each day with a clear snapshot of mental energy and recovery."
-            ],
-            [
-              "Focus sessions",
-              "Track deep work windows and see when your attention is strongest."
-            ],
-            [
-              "Stress alerts",
-              "Receive gentle haptic nudges before overload turns into burnout."
-            ],
-            [
-              "Trend reports",
-              "Understand long-term patterns across sleep, stress, and performance."
-            ]
-          ].map(([title, text]) => (
-            <div
-              key={title}
-              className="rounded-3xl border border-white/10 bg-[#071126] p-6"
-            >
-              <h3 className="text-xl font-semibold text-white">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-[#A5B4C7]">{text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="waitlist" className="mx-auto max-w-6xl px-6 py-24 text-center">
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-[#00E0FF]/20 bg-[#00E0FF]/8 p-10 shadow-[0_0_60px_rgba(0,224,255,0.12)] md:p-16">
-          <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-[#00E0FF]/20 blur-3xl" />
-
-          <div className="relative">
-            <div className="mb-8 flex justify-center">
-              <NeuroBandMark size="medium" />
-            </div>
-
-            <p className="font-mono text-sm uppercase tracking-[0.32em] text-[#00E0FF]">
-              Reserve early access
-            </p>
-
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-              Be first to wear the future of focus.
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-2xl leading-8 text-[#A5B4C7]">
-              Join the NeuroBand waitlist for launch updates, beta testing
-              opportunities, and founder-only access.
-            </p>
-
-            <form className="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="min-h-12 flex-1 rounded-full border border-white/10 bg-[#0A0F26]/80 px-5 text-white placeholder:text-[#A5B4C7] outline-none focus:ring-2 focus:ring-[#00E0FF]"
-              />
-
-              <button
-                type="button"
-                className="min-h-12 rounded-full border-0 bg-[#00E0FF] px-8 font-mono text-xs uppercase tracking-[0.22em] text-[#0A0F26] hover:bg-white"
-              >
-                Join waitlist
-              </button>
-            </form>
+      <section className="keywordStrip">
+        {[
+          [<Waves size={22} />, "Brainwaves"],
+          [<CircleDot size={22} />, "Focus"],
+          [<Vibrate size={22} />, "Haptics"],
+          [<BookOpen size={22} />, "Students"],
+          [<Watch size={22} />, "Wearable"],
+          [<Sparkles size={22} />, "Growth"]
+        ].map(([icon, label]) => (
+          <div className="keyword" key={label}>
+            {icon}
+            {label}
           </div>
+        ))}
+      </section>
+
+      <section id="features" className="section">
+        <div className="sectionIntro">
+          <p className="label">What NeuroBand does</p>
+          <h2>A focus system that adapts to the person wearing it.</h2>
+          <p>
+            NeuroBand is different because it does not treat focus like one
+            fixed problem with one fixed solution. It combines attention testing,
+            haptic cue timing, daily reflection, context tracking, and
+            self-chosen rewards so users can learn what actually helps them stay
+            on task.
+          </p>
+        </div>
+
+        <div className="features">
+          {features.map((feature) => (
+            <div className="featureCard" key={feature.title}>
+              <div className="featureIcon">{feature.icon}</div>
+              <h3>{feature.title}</h3>
+              <p>{feature.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section splitSection">
+        <div className="appCard">
+          <BatteryCharging size={42} />
+          <p className="label">How it works</p>
+          <h2>Test. Cue. Log. Learn. Reward.</h2>
+          <p>
+            A user starts with a mini SART-style attention task. NeuroBand then
+            explores gentle vibration timing and lets the user record focus
+            quality, teacher observations, sleep, caffeine, and daily context.
+            Over time, the app turns those logs into patterns the user can act
+            on.
+          </p>
+        </div>
+
+        <div className="timeline">
+          <Step
+            number="01"
+            title="Mini attention check"
+            text="Reaction time variability gives a quick snapshot of sustained attention."
+          />
+          <Step
+            number="02"
+            title="Gentle vibration cue"
+            text="A non-disruptive wrist vibration acts as a physical reminder to reset attention."
+          />
+          <Step
+            number="03"
+            title="Daily reflection"
+            text="Users or teachers can log focus observations in a quick, simple format."
+          />
+          <Step
+            number="04"
+            title="Reward loop"
+            text="Benchmarks connect focus progress to self-selected rewards and motivation."
+          />
+        </div>
+      </section>
+
+      <section id="creator" className="creatorSection">
+        <div className="creatorPhotoWrap">
+          <img
+            src="/maya-warthen.jpg"
+            alt="Maya Warthen, founder of NeuroBand"
+            className="creatorPhoto"
+          />
+        </div>
+
+        <div className="creatorCopy">
+          <p className="label">Meet the creator</p>
+          <h2>Maya Warthen</h2>
+          <p className="creatorTitle">
+            Founder • Lead Researcher • Scholar With Distinction • Student
+            Innovator
+          </p>
+
+          <p>
+            I created NeuroBand because I know what it feels like to struggle
+            with ADHD and still want to succeed, focus, and be understood. Not
+            everyone can access medication, extra time, or the support they need
+            at the moment they need it. NeuroBand is my way of building
+            something more personal, more accessible, and more empowering.
+          </p>
+
+          <p>
+            My mission is to increase awareness of ADHD and help more people
+            become stronger students, more focused individuals, and more
+            confident learners — especially in a world where attention is
+            constantly being pulled away.
+          </p>
+
+          <blockquote>
+            “If you use NeuroBand, I want you to know that I am here for you. I
+            am building this for people who have felt distracted, misunderstood,
+            or unsupported — and who still deserve tools that help them thrive.”
+          </blockquote>
+
+          <div className="creatorBadges">
+            <span>
+              <GraduationCap size={16} /> Tower Hill School
+            </span>
+            <span>
+              <HeartPulse size={16} /> Future Health Careers
+            </span>
+            <span>
+              <Award size={16} /> Research & leadership
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" className="researchSection">
+        <div className="sectionIntro centered">
+          <p className="label">Current research</p>
+          <h2>
+            Studying whether gentle haptic cues can support sustained attention.
+          </h2>
+          <p>
+            Maya’s current study investigates whether subtle wrist vibrations
+            can reduce attentional lapses during sustained cognitive tasks in
+            high school students. The study compares a control condition with a
+            vibration condition while measuring reaction time, reaction time
+            variability, lapse rate, and self-reported focus.
+          </p>
+        </div>
+
+        <div className="researchGrid">
+          {researchStats.map(([label, value, text]) => (
+            <div className="researchStat" key={label}>
+              <p>{label}</p>
+              <strong>{value}</strong>
+              <span>{text}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="researchCards">
+          <ResearchCard
+            icon={<Target size={26} />}
+            title="Research question"
+            text="Can gentle haptic vibration feedback reduce attention lapses and reaction time variability during a sustained attention task?"
+          />
+          <ResearchCard
+            icon={<Radio size={26} />}
+            title="Experimental design"
+            text="Participants complete two sessions: one without vibration and one with NeuroBand vibration cues delivered at randomized intervals."
+          />
+          <ResearchCard
+            icon={<Moon size={26} />}
+            title="Context matters"
+            text="The study records sleep and caffeine as covariates so attention data can be interpreted with real-world factors in mind."
+          />
+        </div>
+      </section>
+
+      <section id="contact" className="contactSection">
+        <div>
+          <p className="label">Contact</p>
+          <h2>Connect with NeuroBand.</h2>
+          <p>
+            For research questions, collaboration opportunities, or updates
+            about NeuroBand, reach out directly.
+          </p>
+        </div>
+
+        <div className="contactCards">
+          <a href="mailto:mayawarthen@icloud.com" className="contactCard">
+            <Mail size={24} />
+            <div>
+              <span>Email</span>
+              <strong>mayawarthen@icloud.com</strong>
+            </div>
+          </a>
+
+          <a href="tel:3024150632" className="contactCard">
+            <Phone size={24} />
+            <div>
+              <span>Phone</span>
+              <strong>302-415-0632</strong>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section className="waitlist">
+        <div className="waitlistCard">
+          <NeuroBandMark small />
+          <p className="label">Join the mission</p>
+          <h2>Help build a more personal future for focus support.</h2>
+          <p>
+            NeuroBand is being built for students, people with ADHD, educators,
+            and anyone who wants a better way to understand and support
+            attention.
+          </p>
+
+          <form className="form">
+            <input type="email" placeholder="Enter your email" />
+            <button type="button">Join Waitlist</button>
+          </form>
         </div>
       </section>
     </main>
   );
 }
 
-function NeuroBandMark({ size = "medium" }) {
-  const dimensions = {
-    small: "h-10 w-16",
-    medium: "h-20 w-32",
-    hero: "h-48 w-72"
-  }[size];
-
+function Stat({ label, value }) {
   return (
-    <div
-      className={`relative ${dimensions} flex items-center justify-center`}
-      aria-label="NeuroBand signal mark"
-    >
-      <span className="absolute h-4 w-4 rounded-full bg-[#64D9FF] shadow-[0_0_28px_rgba(0,224,255,0.95)]" />
-      <span className="absolute h-16 w-16 rounded-full border-l-2 border-r-2 border-[#00E0FF] opacity-95" />
-      <span className="absolute h-24 w-24 rounded-full border-l-2 border-r-2 border-[#16A8FF] opacity-80" />
-      <span className="absolute h-32 w-32 rounded-full border-l-2 border-r-2 border-[#2563FF] opacity-70" />
-      <span className="absolute h-40 w-40 rounded-full border-l-2 border-r-2 border-[#2563FF] opacity-45" />
+    <div className="stat">
+      <p>{label}</p>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+function Step({ number, title, text }) {
+  return (
+    <div className="step">
+      <span>{number}</span>
+      <div>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </div>
+    </div>
+  );
+}
+
+function ResearchCard({ icon, title, text }) {
+  return (
+    <div className="researchCard">
+      <div className="featureIcon">{icon}</div>
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
+}
+
+function NeuroBandMark({ small = false }) {
+  return (
+    <div className={small ? "mark smallMark" : "mark"}>
+      <span className="dot" />
+      <span className="arc arc1" />
+      <span className="arc arc2" />
+      <span className="arc arc3" />
+      <span className="arc arc4" />
     </div>
   );
 }
