@@ -349,6 +349,34 @@ export default function App() {
             title="Context matters"
             text="The study records sleep and caffeine as covariates so attention data can be interpreted with real-world factors in mind."
           />
+          <div className="prototypeGallery">
+  <div className="prototypeImageCard">
+    <img src="/prototype-hardware.jpg" alt="NeuroBand prototype hardware and breadboard wiring" />
+    <h3>Prototype Hardware</h3>
+    <p>
+      Early NeuroBand hardware testing using microcontroller components, wiring,
+      and a vibration motor setup for haptic cue delivery.
+    </p>
+  </div>
+
+  <div className="prototypeImageCard">
+    <img src="/sart-testing.jpg" alt="Participant completing a SART attention task while wearing NeuroBand" />
+    <h3>SART Testing</h3>
+    <p>
+      A participant completes the Sustained Attention to Response Task while
+      wearing the wrist-mounted NeuroBand prototype.
+    </p>
+  </div>
+
+  <div className="prototypeImageCard">
+    <img src="/arduino-coding.jpg" alt="Arduino IDE used for NeuroBand prototype programming" />
+    <h3>Programming the Device</h3>
+    <p>
+      Arduino development and device programming used to support the vibration
+      timing and experimental prototype.
+    </p>
+  </div>
+</div>
         </div>
       </section>
 
