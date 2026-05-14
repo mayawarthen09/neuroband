@@ -102,7 +102,7 @@ export default function App() {
               Haptic cues • Focus tracking • ADHD support
             </div>
 
-            <h1>Tune your mind. Elevate your life.</h1>
+            <h1>Tune your mind. Elevate your life. Built by Maya.</h1>
 
             <p className="heroText">
               NeuroBand is a student-built wearable and companion app designed
